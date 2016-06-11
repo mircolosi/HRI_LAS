@@ -1,0 +1,34 @@
+<launch>
+	<arg name="use_joystick" default="true" />
+	<arg name="robot_name" default="diago"/>
+	<arg name="laser_topic" default="scan"/>
+	<arg name="laser_frame" default="laser_frame"/>
+
+	<group ns="$(arg robot_name)">
+
+	  <param name="tf_prefix" value="$(arg robot_name)" />
+	  
+	  <group if="$(arg use_joystick)">
+	      <node pkg="joy" type="joy_node" name="joy" output="screen">
+		  <param name="dev" type="string" value="/dev/input/js0" />
+		  <param name="deadzone" value="0.12" />
+	      </node>
+	      <node pkg="gradient_based_navigation" name="joystick_control" type="joystick_control" output="screen">
+                <param name="maxvel" value="0.5"/>
+	      </node>
+	  </group>
+	  <group unless="$(arg use_joystick)">
+	      <node pkg="gradient_based_navigation" name="keyboard_control" type="keyboard_control" output="screen" />
+	  </group>
+	  
+	  <node pkg="gradient_based_navigation" name="gradientBasedNavigation" type="gradient_based_navigation" args="80"  output="screen">
+		  <param name="GUI" value="true" />
+		  <param name="attractiveDistanceInfluence_m" value="0.5" />
+		  <param name="obstaclesDistanceInfluence_m" value="1.0" />
+		  <param name="laser_frame" value="/$(arg robot_name)/$(arg laser_frame)" />
+		  <remap from="base_scan" to="/$(arg robot_name)/$(arg laser_topic)" />       
+	  </node>
+	
+	</group>
+	
+</launch>

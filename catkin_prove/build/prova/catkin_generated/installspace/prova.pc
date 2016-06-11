@@ -1,0 +1,8 @@
+prefix=/home/parallels/catkin_prove/install
+
+Name: prova
+Description: Description of prova
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/parallels/catkin_prove/install/lib 
+Requires: 

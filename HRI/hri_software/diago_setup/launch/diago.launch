@@ -1,0 +1,111 @@
+<launch>
+    
+    <arg name="robot_name" default="diago"/>
+    <arg name="robot_port" default="/dev/ttyUSB0" />
+    <arg name="front_laser_port" default="/dev/sensors/hokuyo_H1205358"/>
+    <arg name="rear_laser_port" default="/dev/sensors/hokuyo_H0712571"/>
+    <arg name="top_kinect_ID" default="A00363A19219144A"/>
+    <arg name="bottom_kinect_ID" default="A00363A41661035A"/>
+    
+    <arg name="segway_enabled" default="true"/>
+    <arg name="lasers_enabled" default="true"/>
+    <arg name="kinects_enabled" default="false"/>
+    <arg name="kinects_thin_driver" default="true"/>
+    
+    <arg name="publish_tf" default="false" />
+    
+    <master auto="start"/>
+    
+
+    <!-- Kinect cameras --> 
+    <group if="$(arg kinects_enabled)">
+
+      <!-- Kinect thin_drivers  -->
+      <group if="$(arg kinects_thin_driver)">
+        <node pkg="thin_kinect" type="thin_kinect_node" name="thin_kinect_top"  ns="$(arg robot_name)">
+            <param name="device_id" value="$(arg top_kinect_ID)" />
+            <!-- param name="device_num" value="1"/ -->
+            <param name="rgb_mode" value="1"/>
+            <param name="depth_mode" value="4"/>
+            <param name="topic" value="$(arg robot_name)/top_camera" />
+            <param name="frame_id" value="$(arg robot_name)/top_camera_frame" />
+        </node>
+        <node pkg="thin_kinect" type="thin_kinect_node" name="thin_kinect_bottom"   ns="$(arg robot_name)">
+	    <param name="device_id" value="$(arg bottom_kinect_ID)" />
+            <!-- param name="device_num" value="0"/ -->
+            <param name="rgb_mode" value="1"/>
+            <param name="depth_mode" value="4"/>
+            <param name="topic" value="$(arg robot_name)/bottom_camera" />
+            <param name="frame_id" value="$(arg robot_name)/bottom_camera_frame" />
+        </node>
+      </group>
+
+      <!-- Kinect ROS drivers -->
+      <group unless="$(arg kinects_thin_driver)">
+        <include file="$(find diago_setup)/launch/diago_freenect.launch"> 
+            <param name="device_id" value="$(arg top_kinect_ID)" />
+            <param name="camera" value="top_camera" />
+            <param name="robot_name" value="$(arg robot_name)" />
+            <param name="publish_tf" value="$(arg publish_tf)" />
+        </include>
+
+        <include file="$(find diago_setup)/launch/diago_freenect.launch"> 
+            <param name="device_id" value="$(arg bottom_kinect_ID)" />
+            <param name="camera" value="bottom_camera" />
+            <param name="robot_name" value="$(arg robot_name)" />
+            <param name="publish_tf" value="$(arg publish_tf)" />
+        </include>
+      </group>
+      
+
+      <!-- STATIC TRANSFORM TOP KINECT-BASE LINK -->
+      <node pkg="tf" type="static_transform_publisher"  ns="$(arg robot_name)" name="offset_top"
+	  args="0 0 1.6 0 0 0  /$(arg robot_name)/base_frame /$(arg robot_name)/top_camera_frame 100" />  
+
+      <!-- STATIC TRANSFORM BOTTOM KINECT-BASE LINK -->
+      <node pkg="tf" type="static_transform_publisher"  ns="$(arg robot_name)" name="offset_bottom"
+	  args="0 0 0.65 0 0.6 3.14  /$(arg robot_name)/base_frame /$(arg robot_name)/bottom_camera_frame 100" />
+    </group>
+
+    <group ns="$(arg robot_name)">
+      <!-- param name="tf_prefix" value="$(arg robot_name)" / -->
+
+      <!-- Hokuyo laser range finders --> 
+      <group if="$(arg lasers_enabled)">    
+
+        <!-- node name="hokuyo_utm30" pkg="hokuyo_node" type="hokuyo_node" output="screen">
+	  <param name="port" value="$(arg front_laser_port)" />
+	  <param name="frame_id" value="/$(arg robot_name)/laser_frame" />
+	</node -->
+
+        <node name="hokuyo_utm30" pkg="thin_hokuyo" type="thin_hokuyo_node" output="screen">
+	  <param name="serial_port" value="$(arg front_laser_port)" />
+	  <param name="topic" value="/$(arg robot_name)/scan" />
+	  <param name="frame_id" value="/$(arg robot_name)/laser_frame" />
+	</node>
+
+	<!-- node name="hokuyo_urg04" pkg="hokuyo_node" type="hokuyo_node" output="screen">
+	  <param name="port" value="$(arg rear_laser_port)" />
+	  <remap from="scan"  to="rear_scan" />
+	  <param name="frame_id" value="/$(arg robot_name)/rear_laser_frame" />
+	</node -->
+
+	<node name="front_laser_frame_broadcaster" pkg="tf" type="static_transform_publisher"  args="0.30 0 0.15 0 0 0 /$(arg robot_name)/base_frame /$(arg robot_name)/laser_frame  25" />
+
+	<node name="rear_laser_link_broadcaster" pkg="tf" type="static_transform_publisher"  args="-0.30 0 0.15 3.14 0 0 /$(arg robot_name)/base_frame /$(arg robot_name)/rear_laser_frame  25" />
+      </group>
+    
+    
+      <!-- Segway base -->
+      <group if="$(arg segway_enabled)">  
+	<include file="$(find segway_rmpx)/launch/segway_rmp.launch">
+	    <param name="serial_port" value="$(arg robot_port)"/>
+	    <arg name="robot_name" value="$(arg robot_name)" />
+	</include>
+      </group>
+      
+    </group>
+
+</launch>
+
+

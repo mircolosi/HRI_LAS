@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/parallels/Desktop/demos/grid_localizer_1/src/grid_localizer.cpp
+grid_localizer.h
+/home/parallels/Desktop/demos/grid_localizer_1/src/grid_localizer.h
+iostream
+-
+
+/home/parallels/Desktop/demos/grid_localizer_1/src/grid_localizer.h
+opencv2/opencv.hpp
+/home/parallels/Desktop/demos/grid_localizer_1/src/opencv2/opencv.hpp
+vector
+-
+
+/home/parallels/Desktop/demos/grid_localizer_1/src/grid_localizer_main.cpp
+grid_localizer.h
+/home/parallels/Desktop/demos/grid_localizer_1/src/grid_localizer.h
+iostream
+-
+

@@ -1,0 +1,17 @@
+HOW TO COMPILE
+
+  $ mkdir build
+  $ cd build
+  $ cmake ..
+  $ make
+  $ cd ..
+  
+HOW TO RUN
+
+  $ ./run.sh
+  
+  When a face is detected, a blue bounding box is displayed.
+  Press 'q' on the image window to quit the application.
+  
+  This demo requires a webcam compatible with OpenCV 2.4.x
+  

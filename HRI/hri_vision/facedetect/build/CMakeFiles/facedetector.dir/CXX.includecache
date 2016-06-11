@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/parallels/Documents/HRI/hri_vision/facedetect/facedetect.cpp
+opencv2/objdetect/objdetect.hpp
+/home/parallels/Documents/HRI/hri_vision/facedetect/opencv2/objdetect/objdetect.hpp
+opencv2/highgui/highgui.hpp
+/home/parallels/Documents/HRI/hri_vision/facedetect/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/parallels/Documents/HRI/hri_vision/facedetect/opencv2/imgproc/imgproc.hpp
+cctype
+-
+iostream
+-
+iterator
+-
+stdio.h
+-
+

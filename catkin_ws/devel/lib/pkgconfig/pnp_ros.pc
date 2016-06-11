@@ -1,0 +1,8 @@
+prefix=/home/parallels/catkin_ws/devel
+
+Name: pnp_ros
+Description: Description of pnp_ros
+Version: 0.0.0
+Cflags: -I/home/parallels/catkin_ws/src/pnp_ros/include
+Libs: -L/home/parallels/catkin_ws/devel/lib -lPNPAS
+Requires: actionlib pnp_msgs

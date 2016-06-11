@@ -1,0 +1,22 @@
+<launch>
+    
+    <arg name="robotname" default="diago"/>    
+    <arg name="worldfile" default="dis_B1_diago" />
+    <arg name="laser_topic" default="scan" />
+    <arg name="laser_link" default="laser_frame" />
+  
+    <param name="/use_sim_time" value="true"/>
+
+    <master auto="start"/>
+
+    <!-- Stage world -->
+    
+    <node pkg="stage_environments" type="stageros" name="stageros" args="-u $(find stage_environments)/maps/$(arg worldfile).world" respawn="false">
+      <param name="base_watchdog_timeout" value="0.2"/>
+      <param name="laser_topic" value="$(arg laser_topic)"/>
+      <param name="laser_link" value="$(arg laser_link)"/>
+    </node>
+
+</launch>
+
+

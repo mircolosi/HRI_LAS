@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "gradient_based_navigation")
+set(gradient_based_navigation_MAINTAINER "marco <marcoimperoli@gmail.com>")
+set(gradient_based_navigation_DEPRECATED "")
+set(gradient_based_navigation_VERSION "0.0.0")
+set(gradient_based_navigation_BUILD_DEPENDS "actionlib" "geometry_msgs" "roscpp" "roslib" "rospy" "std_msgs" "std_srvs" "tf")
+set(gradient_based_navigation_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs" "std_srvs" "tf")
+set(gradient_based_navigation_BUILDTOOL_DEPENDS "catkin")

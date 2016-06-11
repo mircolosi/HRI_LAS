@@ -1,0 +1,2 @@
+include "DISB1_base.inc" 
+segway( pose [ 2.000000 2.000000 0 0.000000 ] name "diago" color "blue")

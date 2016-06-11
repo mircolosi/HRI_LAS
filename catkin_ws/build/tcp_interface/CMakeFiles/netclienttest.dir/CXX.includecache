@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/parallels/catkin_ws/src/tcp_interface/src/gnetwork/netclienttest.cpp
+iostream
+-
+networkedmodule.h
+/home/parallels/catkin_ws/src/tcp_interface/src/gnetwork/networkedmodule.h
+
+/home/parallels/catkin_ws/src/tcp_interface/src/gnetwork/network.h
+sys/socket.h
+-
+netinet/in.h
+-
+unistd.h
+-
+string.h
+-
+
+/home/parallels/catkin_ws/src/tcp_interface/src/gnetwork/networkedmodule.h
+string
+-
+map
+-
+list
+-
+sys/time.h
+-
+network.h
+/home/parallels/catkin_ws/src/tcp_interface/src/gnetwork/network.h
+

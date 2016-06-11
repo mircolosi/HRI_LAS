@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "tcp_interface")
+set(tcp_interface_MAINTAINER "beesafe <beesafe@todo.todo>")
+set(tcp_interface_DEPRECATED "")
+set(tcp_interface_VERSION "0.0.0")
+set(tcp_interface_BUILD_DEPENDS "message_generation" "roscpp" "rospy" "std_msgs")
+set(tcp_interface_RUN_DEPENDS "message_runtime" "roscpp" "rospy" "std_msgs")
+set(tcp_interface_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "glocalizer")
+set(glocalizer_MAINTAINER "iocchi <iocchi@todo.todo>")
+set(glocalizer_DEPRECATED "")
+set(glocalizer_VERSION "0.0.0")
+set(glocalizer_BUILD_DEPENDS "message_generation")
+set(glocalizer_RUN_DEPENDS "message_runtime")
+set(glocalizer_BUILDTOOL_DEPENDS "catkin")

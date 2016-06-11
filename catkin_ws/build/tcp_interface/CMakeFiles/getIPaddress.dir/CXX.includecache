@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/parallels/catkin_ws/src/tcp_interface/src/getIPaddress.cpp
+arpa/inet.h
+-
+sys/socket.h
+-
+netdb.h
+-
+ifaddrs.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+linux/if_link.h
+-
+

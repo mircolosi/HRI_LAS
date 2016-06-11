@@ -1,0 +1,8 @@
+prefix=/home/parallels/catkin_ws/devel
+
+Name: stage_environments
+Description: Description of stage_environments
+Version: 0.0.0
+Cflags: -I/opt/ros/indigo/include/Stage-4.1 -I/usr/lib/fltk -I/usr/include
+Libs: -L/home/parallels/catkin_ws/devel/lib -lstage_environments -l:/opt/ros/indigo/lib/libstage.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: geometry_msgs nav_msgs roscpp sensor_msgs std_msgs tf

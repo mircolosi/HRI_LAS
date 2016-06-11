@@ -1,0 +1,8 @@
+This folder contains two demo software related to computer vision techniques for HRI.
+
+1) bgsubtracion is a ROS node implementing a backgroud subtraction method
+2) facedetect is an application implementing a face detection method.
+
+They both use OpenCV 2.4.x (do not install OpenCV 3.0.x for these demos).
+
+See the README files in the two folders for more details about compiling and running these modules.

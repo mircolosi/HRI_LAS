@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "hri_pnp")
+set(hri_pnp_MAINTAINER "Luca Iocchi <iocchi@dis.uniroma1.it>")
+set(hri_pnp_DEPRECATED "")
+set(hri_pnp_VERSION "0.0.0")
+set(hri_pnp_BUILD_DEPENDS "actionlib" "move_base_msgs" "nav_msgs" "roscpp" "tf" "stage_ros")
+set(hri_pnp_RUN_DEPENDS "message_runtime" "actionlib" "move_base_msgs" "nav_msgs" "roscpp" "tf" "stage_ros")
+set(hri_pnp_BUILDTOOL_DEPENDS "catkin")

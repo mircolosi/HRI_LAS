@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "bgsubtraction_demo")
+set(bgsubtraction_demo_MAINTAINER "turtlebot <turtlebot@todo.todo>")
+set(bgsubtraction_demo_DEPRECATED "")
+set(bgsubtraction_demo_VERSION "0.0.0")
+set(bgsubtraction_demo_BUILD_DEPENDS "cv_bridge" "image_transport" "roscpp" "sensor_msgs" "std_msgs")
+set(bgsubtraction_demo_RUN_DEPENDS "cv_bridge" "image_transport" "roscpp" "sensor_msgs" "std_msgs")
+set(bgsubtraction_demo_BUILDTOOL_DEPENDS "catkin")

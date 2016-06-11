@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "pnp_msgs")
+set(pnp_msgs_MAINTAINER "Luca Iocchi <iocchi@dis.uniroma1.it>")
+set(pnp_msgs_DEPRECATED "")
+set(pnp_msgs_VERSION "0.0.0")
+set(pnp_msgs_BUILD_DEPENDS "actionlib" "actionlib_msgs" "geometry_msgs" "message_generation")
+set(pnp_msgs_RUN_DEPENDS "actionlib" "actionlib_msgs" "message_runtime" "geometry_msgs")
+set(pnp_msgs_BUILDTOOL_DEPENDS "catkin")

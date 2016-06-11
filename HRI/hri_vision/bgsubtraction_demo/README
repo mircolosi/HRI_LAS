@@ -1,0 +1,16 @@
+This is a ROS catkin node. 
+Put it in a catkin workspace and compile it with catkin_make.
+
+The demo reads images from topic /camera/rgb/image_color
+and publishes a topic for activating PNP condition personAt_RoomB115
+when a big enough blob is detected.
+
+To run the demo you need a ROS node publishing an image in the
+topic /camera/rgb/image_color.
+Examples are: 1) a node acquiring data from a camera (e.g., Kinext, ASUS xtion, etc.)
+2) a ROS bag containing this topic.
+
+Note: If you have a node or a bag with a different topic name, this name can be remapped with the command line option <old_name>:=<new_name>
+For example,
+
+  $ rosrun bgsubtraction_demo bgsubtraction_demo_node /camera/rgb/image_color:=/my_camera/rgb/image_color

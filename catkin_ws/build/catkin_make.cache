@@ -1,0 +1,2 @@
+bgsubtraction_demo:diago_apps:diago_setup:glocalizer:gradient_based_navigation:hri_pnp:laser_analysis:pnp_msgs:pnp_ros:rococo_navigation:stage_environments:tcp_interface
+-DCATKIN_DEVEL_PREFIX=/home/parallels/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/parallels/catkin_ws/install -G Unix Makefiles

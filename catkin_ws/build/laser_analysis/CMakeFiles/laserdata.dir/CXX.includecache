@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/parallels/catkin_ws/src/laser_analysis/src/laserdata.cpp
+ros/ros.h
+-
+sensor_msgs/PointCloud2.h
+-
+pcl_ros/io/pcd_io.h
+-
+pcl_ros/point_cloud.h
+-
+sensor_msgs/LaserScan.h
+-
+fstream
+-
+iomanip
+-
+cmath
+-
+cstring
+-
+

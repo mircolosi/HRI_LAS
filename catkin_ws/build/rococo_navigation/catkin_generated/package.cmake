@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "rococo_navigation")
+set(rococo_navigation_MAINTAINER "Luca Iocchi <iocchi@dis.uniroma1.it>")
+set(rococo_navigation_DEPRECATED "")
+set(rococo_navigation_VERSION "0.0.0")
+set(rococo_navigation_BUILD_DEPENDS "message_generation" "actionlib" "actionlib_msgs" "roscpp" "rospy" "std_msgs" "tf" "move_base" "laser_analysis")
+set(rococo_navigation_RUN_DEPENDS "message_runtime" "actionlib" "actionlib_msgs" "roscpp" "rospy" "std_msgs" "tf" "move_base" "laser_analysis")
+set(rococo_navigation_BUILDTOOL_DEPENDS "catkin")

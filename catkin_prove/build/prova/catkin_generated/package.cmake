@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "prova")
+set(prova_MAINTAINER "parallels <parallels@todo.todo>")
+set(prova_DEPRECATED "")
+set(prova_VERSION "0.0.0")
+set(prova_BUILD_DEPENDS "cv_bridge" "image_transport" "roscpp" "sensor_msgs" "std_msgs")
+set(prova_RUN_DEPENDS "cv_bridge" "image_transport" "roscpp" "sensor_msgs" "std_msgs")
+set(prova_BUILDTOOL_DEPENDS "catkin")

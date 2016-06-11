@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "diago_setup")
+set(diago_setup_MAINTAINER "iocchi <iocchi@todo.todo>")
+set(diago_setup_DEPRECATED "")
+set(diago_setup_VERSION "0.0.0")
+set(diago_setup_BUILD_DEPENDS )
+set(diago_setup_RUN_DEPENDS )
+set(diago_setup_BUILDTOOL_DEPENDS "catkin")
